@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Studio Kiosk</title>
+  <style>
+    /* Basic styling for full-screen iPad kiosk */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #333;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 20px 40px;
+      margin: 20px;
+      font-size: 22px;
+      color: white;
+      background-color: #0077cc;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      text-align: center;
+      width: 70%;
+      max-width: 400px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Our Studio</h1>
+
+  <!-- Video Call Button -->
+  <a href="YOUR_ZOOM_WEB_LINK_HERE" class="button" target="_blank">🎥 Video Call</a>
+
+  <!-- Email/Form Button -->
+  <a href="YOUR_FORM_LINK_HERE" class="button" target="_blank">✉️ Request via Email</a>
+
+  <script>
+    // Auto-return to home page after 2 minutes (120000 ms)
+    let idleTime = 0;
+
+    function resetIdleTimer() {
+      idleTime = 0;
+    }
+
+    // Increment idle time every second
+    setInterval(function() {
+      idleTime += 1000;
+      if (idleTime >= 120000) { // 2 minutes
+        window.location.href = "YOUR_HOME_PAGE_LINK_HERE"; // Front desk page
+      }
+    }, 1000);
+
+    // Reset idle timer on any touch or click
+    document.addEventListener('click', resetIdleTimer);
+    document.addEventListener('touchstart', resetIdleTimer);
+  </script>
+
+</body>
+</html>
