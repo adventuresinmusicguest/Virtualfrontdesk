@@ -70,7 +70,7 @@ Email Response: We’ll reply within 24 hours.</h1>
     setInterval(function() {
       idleTime += 1000;
       if (idleTime >= 120000) { // 2 minutes
-        window.location.href = "YOUR_HOME_PAGE_LINK_HERE"; // Front desk page
+        window.location.reload(); // Front desk page
       }
     }, 1000);
 
